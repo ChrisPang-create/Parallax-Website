@@ -18,6 +18,12 @@ if (screen.width < 400) {
     fish4move = 4300;
 }
 
+// Record initial vertical positions for fish movement
+var fish1BaseTop = fish1.offsetTop;
+var fish2BaseTop = fish2.offsetTop;
+var fish3BaseTop = fish3.offsetTop;
+var fish4BaseTop = fish4.offsetTop;
+
 
 
 window.addEventListener('scroll', function () {
@@ -49,11 +55,11 @@ window.addEventListener('scroll', function () {
         splash.style.top = 20 + value * -0.3 + 'px';
     }
 
-    //Move fishes horizontally
-    fish1.style.right = (value - 100) * 1 + 'px';
-    fish2.style.left = (value - fish2move) * 1 + 'px';
-    fish3.style.right = (value - fish3move) * 1 + 'px';
-    fish4.style.left = (value - fish4move) * 1 + 'px';
+    //Move fishes vertically
+    fish1.style.top = fish1BaseTop + (value - 100) * 0.3 + 'px';
+    fish2.style.top = fish2BaseTop + (value - fish2move) * 0.25 + 'px';
+    fish3.style.top = fish3BaseTop + (value - fish3move) * 0.2 + 'px';
+    fish4.style.top = fish4BaseTop + (value - fish4move) * 0.15 + 'px';
 })
 
 
